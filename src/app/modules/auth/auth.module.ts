@@ -9,6 +9,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { RecoverPasswordComponent } from './components/recover-password/recover-password.component';
 import { ProfileComponent } from './components/profile/profile.component';
 import { ProfileEditComponent } from './components/profile/profile-edit.component';
+import { LoginV1Component } from './components/login-v1/login-v1.component';
+import { RegisterV1Component } from './components/register-v1/register-v1.component';
+import { ForgotPasswordV1Component } from './components/forgot-password-v1/forgot-password-v1.component';
+import { RecoverPasswordV1Component } from './components/recover-password-v1/recover-password-v1.component';
+
 
 
 
@@ -20,6 +25,11 @@ import { ProfileEditComponent } from './components/profile/profile-edit.componen
     RecoverPasswordComponent,
     ProfileComponent,
     ProfileEditComponent,
+    LoginV1Component,
+    RegisterV1Component,
+    ForgotPasswordV1Component,
+    RecoverPasswordV1Component,
+   
 
   ],
   imports: [
@@ -34,6 +44,11 @@ import { ProfileEditComponent } from './components/profile/profile-edit.componen
     RecoverPasswordComponent,
     ProfileComponent,
     ProfileEditComponent,
+    LoginV1Component,
+    RegisterV1Component,
+    ForgotPasswordV1Component,
+    RecoverPasswordV1Component,
+    
   ]
 })
 export class AuthModule { }

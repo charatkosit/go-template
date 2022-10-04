@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RestService } from './services/rest.service';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'go-template';
+  mIsAuthen:boolean =false;
+  constructor(public rest:RestService) {}
+  
+  ngOnInit(){
+    console.log('result: ' + this.rest.isLoggedIn());
+  }
+
 }

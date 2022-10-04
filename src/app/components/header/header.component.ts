@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { RestService } from 'src/app/services/rest.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-header',
@@ -7,9 +10,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:Router, public rest:RestService) { }
 
   ngOnInit(): void {
   }
 
+ 
+  onClickSignOut(){
+    localStorage.removeItem(environment.loginResult)
+    this.router.navigate(["/loginv1"])
+  }
 }

@@ -9,7 +9,8 @@ import { PaymentComponent } from './modules/shopping/components/payment/payment.
 import { ShopComponent } from './modules/shopping/components/shop/shop.component';
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "login" },  //ไม่พิมพ์อะไรเลย ให้ไป login
+  { path: "", pathMatch: "full", redirectTo: "loginv1" },  //ไม่พิมพ์อะไรเลย ให้ไป login
+  { path: "login" , component: LoginComponent},
   { path: "blank" , component: BlankComponent},
   { path: "content", component: ContentComponent },
   { path: "dashboard", component: DashboardComponent },
