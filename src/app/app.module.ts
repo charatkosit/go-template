@@ -24,7 +24,11 @@ import { AppService } from './services/app.service';
 import { RestService } from './services/rest.service';
 import { BlankComponent } from './components/blank/blank.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import { CartComponent } from './components/header/cart/cart.component';
+import { CartNewComponent } from './components/header/cart-new/cart-new.component';
+import { UserHeaderComponent } from './components/header/user-header/user-header.component';
+
+
+
 
 @NgModule({
   declarations: [
@@ -33,7 +37,6 @@ import { CartComponent } from './components/header/cart/cart.component';
     SidemenuComponent,
     ContentComponent,
     FooterComponent,
-
     MessagesComponent,
     LanguageComponent,
     NotifyComponent,
@@ -43,9 +46,9 @@ import { CartComponent } from './components/header/cart/cart.component';
     SearchComponent,
     BlankComponent,
     DashboardComponent,
-    CartComponent,
-
-   
+    CartNewComponent,
+    UserHeaderComponent,
+    
   ],
   imports: [
     BrowserModule,

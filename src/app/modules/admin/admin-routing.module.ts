@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { SettingComponent } from './components/setting/setting.component';
 
 const AdminRoutes: Routes = [
-  { path: "setting", component: SettingComponent },
+  { path: "settings", component: SettingComponent },
 
 ];
 
