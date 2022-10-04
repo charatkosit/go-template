@@ -24,6 +24,7 @@ import { AppService } from './services/app.service';
 import { RestService } from './services/rest.service';
 import { BlankComponent } from './components/blank/blank.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { CartComponent } from './components/header/cart/cart.component';
 
 @NgModule({
   declarations: [
@@ -42,6 +43,7 @@ import { DashboardComponent } from './components/dashboard/dashboard.component';
     SearchComponent,
     BlankComponent,
     DashboardComponent,
+    CartComponent,
 
    
   ],
