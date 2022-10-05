@@ -26,6 +26,7 @@ import { BlankComponent } from './components/blank/blank.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CartNewComponent } from './components/header/cart-new/cart-new.component';
 import { UserHeaderComponent } from './components/header/user-header/user-header.component';
+import { DeliveryModule } from './modules/delivery/delivery.module';
 
 
 
@@ -53,9 +54,12 @@ import { UserHeaderComponent } from './components/header/user-header/user-header
   imports: [
     BrowserModule,
     FormsModule,
-    AuthModule,
+    
+
     AdminModule,
+    AuthModule,
     ShoppingModule,
+    DeliveryModule,
     AppRoutingModule  //****AppRoutingModule ต้องอยู่ด้านล่างเสมอ  
   ],
   providers: [AppService , RestService ],

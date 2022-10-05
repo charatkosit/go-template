@@ -4,9 +4,7 @@ import { BlankComponent } from './components/blank/blank.component';
 import { ContentComponent } from './components/content/content.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { LoginComponent } from './modules/auth/components/login/login.component';
-import { CartComponent } from './modules/shopping/components/cart/cart.component';
-import { PaymentComponent } from './modules/shopping/components/payment/payment.component';
-import { ShopComponent } from './modules/shopping/components/shop/shop.component';
+
 
 const routes: Routes = [
   { path: "", pathMatch: "full", redirectTo: "loginv1" },  //ไม่พิมพ์อะไรเลย ให้ไป login
