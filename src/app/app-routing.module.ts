@@ -18,7 +18,7 @@ const routes: Routes = [
    //ดู route เพิ่มใน admin-routing-module
   //ดู route เพิ่มใน  shopping-routing-module
 
-  { path: "**", redirectTo: "login" }                    // พิมพ์ผิด หรือ พิมพ์มั่ว ให้ไป login
+  { path: "**", redirectTo: "dashboard" }                    // พิมพ์ผิด หรือ พิมพ์มั่ว ให้ไป login
 ];
 
 @NgModule({

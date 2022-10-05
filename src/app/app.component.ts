@@ -9,10 +9,13 @@ import { RestService } from './services/rest.service';
 export class AppComponent {
   title = 'go-template';
   mIsAuthen:boolean =false;
-  constructor(public rest:RestService) {}
+  constructor(public rest:RestService) {
+    //ดึงสถาน การ Login ครั้งแรก = false
+    this.rest.isLoggedIn();
+  }
   
   ngOnInit(){
-    console.log('result: ' + this.rest.isLoggedIn());
+   
   }
 
 }
