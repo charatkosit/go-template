@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { CartComponent } from './components/cart/cart.component';
-import { PaymentComponent } from './components/payment/payment.component';
+import { UserGuard } from 'src/app/guards/user.guard';
+;
 import { ShopComponent } from './components/shop/shop.component';
+import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
+import { ShoppingPaymentComponent } from './components/shopping-payment/shopping-payment.component';
 
 const shoppingRoutes: Routes = [
-  { path: "shop", component: ShopComponent },
-  { path: "shoppingcart", component: CartComponent },  
-  { path: "payment", component: PaymentComponent },
+  {
+    path: '', children: [
+      { path: "shop", component: ShopComponent },
+      { path: "shoppingcart", component: ShoppingCartComponent },
+      { path: "payment", component: ShoppingPaymentComponent }
+    ], canActivate: [UserGuard]
+  }
 
-
-]
+];
 @NgModule({
   imports: [RouterModule.forChild(shoppingRoutes)],
   exports: [RouterModule]

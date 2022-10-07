@@ -1,0 +1,119 @@
+<div class="content-wrapper">
+
+
+  <!-- Content Header (Page header) -->
+  <section class="content-header">
+    <div class="container-fluid">
+      <div class="row mb-2">
+        <div class="col-sm-6">
+          <h1>สรุปรายการ</h1>
+        </div>
+        <div class="col-sm-6">
+          <ol class="breadcrumb float-sm-right">
+            <li class="breadcrumb-item"><a href="#">Home</a></li>
+            <li class="breadcrumb-item active">Delivery add Page</li>
+          </ol>
+        </div>
+      </div>
+    </div>
+    <!-- /.container-fluid -->
+  </section>
+  <!-- Main content -->
+  <section class="content">
+    <div class="container-fluid">
+
+      <div class="callout callout-info">
+        <div class="icheck-primary d-inline">
+          <input type="checkbox" id="checkboxPrimary1" checked>
+          <label for="checkboxPrimary1">เลือกสินค้าทั้งหมด
+          </label>
+        </div>
+      </div>
+
+
+
+      <div class="card card-solid">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+
+              <table class="table table-head-fixed table-bordered table-hover projects">
+                <thead>
+                  <tr>
+                    <th class="text-center"></th>
+                    <th class="text-center">รายการ</th>
+                    <th class="text-center">จำนวน</th>
+                    <th class="text-center">ราคาต่อหน่วย</th>
+                    <th class="text-center">รวมราคา</th>
+                    <th class="text-center">Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let cart of cartList">
+                    <td class="text-center" scope="row">1</td>
+                    <td class="text-left">{{cart.title}}</td>
+                    <td class="text-center">1</td>
+                    <td class="text-right">{{cart.price}}</td>
+                    <td class="text-right">{{cart.price}}</td>
+                    <td class="project-actions text-right">
+                      <a class="btn btn-primary btn-sm" href="#">
+                        <i class="fas fa-folder">
+                        </i>
+                        View
+                      </a>
+                      <a class="btn btn-info btn-sm" href="#">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Edit
+                      </a>
+                      <a class="btn btn-danger btn-sm" href="#">
+                        <i class="fas fa-trash">
+                        </i>
+                        Delete
+                      </a>
+                    </td>
+                  </tr>
+                
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td>ราคารวม</td>
+                    <td>{{total}}</td>
+                    <td></td>
+                  </tr>
+                </tfoot>
+              </table>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <div class="card card-solid">
+        <div class="card-body">
+          <div class="row">
+            <div class="col-12">
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+
+    </div>
+  </section>
+
+
+
+
+
+
+</div>

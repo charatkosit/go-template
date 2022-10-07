@@ -2,19 +2,27 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { DeliveryRoutingModule } from './delivery-routing.module';
-import { DeliveryOrderComponent } from './components/delivery-order/delivery-order.component';
+import { DeliveryListComponent } from './components/delivery-list/delivery-list.component';
+import { DeliveryAddComponent } from './components/delivery-add/delivery-add.component';
+import { DeliveryEditComponent } from './components/delivery-edit/delivery-edit.component';
 
 
 @NgModule({
   declarations: [
-    DeliveryOrderComponent
+
+    DeliveryListComponent,
+    DeliveryAddComponent,
+    DeliveryEditComponent
   ],
   imports: [
     CommonModule,
     DeliveryRoutingModule
   ],
   exports: [
-    DeliveryOrderComponent
+
+    DeliveryListComponent,
+    DeliveryAddComponent,
+    DeliveryEditComponent
   ]
 })
 export class DeliveryModule { }

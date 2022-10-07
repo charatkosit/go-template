@@ -28,26 +28,34 @@
   <link rel="stylesheet" href="assets/plugins/summernote/summernote-bs4.min.css">
   <!-- flag-icon-css -->
   <link rel="stylesheet" href="assets/plugins/flag-icon-css/css/flag-icon.min.css">
+
+    <!-- SweetAlert2 -->
+    <link rel="stylesheet" href="assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+    <!-- Toastr -->
+    <link rel="stylesheet" href="assets/plugins/toastr/toastr.min.css">
+    <!-- Theme style -->
+    <link rel="stylesheet" href="assets/dist/css/adminlte.min.css">
 </head>
 
-<body class="hold-transition sidebar-mini layout-fixed">
+<body class="hold-transition sidebar-mini layout-fixed layout-navbar-fixed">
 
 
 
- 
-    <div class="wrapper">
-      <!-- Preloader -->
-      <div class="preloader flex-column justify-content-center align-items-center">
-        <img class="animation__shake" src="assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
-      </div>
-      <app-root>  </app-root>
-      <!-- Control Sidebar -->
-      <aside class="control-sidebar control-sidebar-dark">
-        <!-- Control sidebar content goes here -->
-      </aside>
-      <!-- /.control-sidebar -->
+
+  <div class="wrapper">
+    <!-- Preloader -->
+    <div class="preloader flex-column justify-content-center align-items-center">
+      <img class="animation__shake" src="assets/dist/img/AdminLTELogo.png" alt="AdminLTELogo" height="60" width="60">
     </div>
- 
+    <app-root> </app-root>
+    <!-- Control Sidebar -->
+    <aside class="control-sidebar control-sidebar-dark">
+      <!-- Control sidebar content goes here -->
+    </aside>
+    <!-- /.control-sidebar -->
+  </div>
+
+
 
   <!-- jQuery -->
   <script src="assets/plugins/jquery/jquery.min.js"></script>
@@ -73,6 +81,31 @@
   <script src="assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.min.js"></script>
   <!-- AdminLTE App -->
   <script src="assets/dist/js/adminlte.js"></script>
+  <!-- Toastr -->
+<script src="assets/plugins/toastr/toastr.min.js"></script>
+<script src="assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+
+<script>
+  $(function() {
+    var Toast = Swal.mixin({
+      toast: true,
+      position: 'top-end',
+      showConfirmButton: false,
+      timer: 500
+    });
+
+    $('.toastrDefaultError').click(function() {
+      toastr.error('ลบ รายการสินค้า')
+    });
+
+    $('.toastrDefaultSuccess').click(function() {
+      toastr.success('เพิ่ม สินค้าลงตระกร้า')
+    });
+   
+   
+
+  });
+</script>
 </body>
 
 </html>
