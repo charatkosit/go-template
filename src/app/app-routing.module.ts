@@ -17,7 +17,7 @@ import { StatementModule } from './modules/statement/statement.module';
 
 
 const routes: Routes = [
-  { path: "", pathMatch: "full", redirectTo: "loginv1" },  //ไม่พิมพ์อะไรเลย ให้ไป login
+  { path: "", pathMatch: "full", redirectTo: "login" },  //ไม่พิมพ์อะไรเลย ให้ไป login
 
   { path: "blank" ,    component: BlankComponent,       canActivate : [UserGuard]},
   { path: "content",   component: ContentComponent ,    canActivate : [UserGuard]},

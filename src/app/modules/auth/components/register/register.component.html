@@ -1,4 +1,4 @@
-<div class="container d-flex align-items-center" style="height:80vh;">
+<div class="container d-flex align-items-center" style="height:82vh;">
   <div class="login-box offset-md-4">
     <div class="login-logo">
       <b>GP </b>Register
@@ -25,7 +25,14 @@
               </div>
             </div>
           </div>
-
+          <div class="input-group mb-3">
+            <input ngModel name="repassword" type="password" class="form-control" placeholder="Re-Password">
+            <div class="input-group-append">
+              <div class="input-group-text">
+                <span class="fas fa-lock"></span>
+              </div>
+            </div>
+          </div>
           <!-- Error Message -->
           <div *ngIf="isError" class="row" style="text-align: center; color :red;margin-bottom: 8px;">
             Error, this username is already registered!

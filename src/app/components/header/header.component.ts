@@ -18,6 +18,6 @@ export class HeaderComponent implements OnInit {
  
   onClickSignOut(){
     localStorage.removeItem(environment.loginResult)
-    this.router.navigate(["/loginv1"])
+    this.router.navigate(["/login"])
   }
 }
