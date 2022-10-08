@@ -9,9 +9,9 @@ import { RestService } from 'src/app/services/rest.service';
   styleUrls: ['./shop.component.css']
 })
 export class ShopComponent implements OnInit {
-
+  mycart:number[] =[];
   productList: Product[] = [];
-  constructor(private http: HttpClient, private rest:RestService) { }
+  constructor(private http: HttpClient, private rest: RestService) { }
 
   ngOnInit(): void {
     this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing").subscribe(res => {
@@ -26,6 +26,14 @@ export class ShopComponent implements OnInit {
       console.log(url);
       return this.productList = res;
     })
-  
   }
+
+
+  onSelect(selectedItem: any) {
+    console.log("Selected Product Id: ", selectedItem.id); // You get the Id of the selected item here
+    this.mycart.push(selectedItem.id);
+    console.log("Data in Cart:",this.mycart)
+
+}
+
 }

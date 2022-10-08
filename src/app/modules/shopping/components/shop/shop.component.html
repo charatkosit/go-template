@@ -403,39 +403,41 @@
   <div class="menu-customer col-md-10 offset-md-1">
     <div class="row">
 
-    
-        <div  class="col-lg-3" *ngFor="let product of productList ">
-          <div class="card" >
-            <div class="card-body">
-              <img class="img-thumbnail" style="height:300px; width:300px;" src={{product.image}} alt="User profile picture">
-              <p class="text-muted text-center" style="height:100px">{{product.title}}</p>
-              <ul class="list-group list-group-unbordered">
-  
-                <li class="list-group-item">
-                  <b>จำนวนในคลัง</b> <a class="pull-right"></a>
-                </li>
-                <li class="list-group-item">
-                  <b>ราคา</b> <a class="pull-right">{{product.price}}</a>
-                </li>
-              </ul>
-              <button type="button" class="btn btn-primary btn-block toastrDefaultSuccess"><i class="fa fa-shopping-cart"></i><b>
-                  เพิ่มตะกร้า</b></button>
-                  <!-- <button type="button" class="btn btn-success toastrDefaultSuccess">
-                    Launch Success Toast
-                  </button> -->
-            </div>
-            <!-- /.box-body -->
+ 
+      <div  class="col-lg-3" *ngFor="let product of productList " >
+        <div class="card" >
+          <div class="card-body">
+            <img class="img-thumbnail" style="height:300px; width:300px;" src={{product.image}} alt="User profile picture">
+            <p class="text-muted text-center" style="height:100px">{{product.title}}</p>
+            <ul class="list-group list-group-unbordered">
+
+              <li class="list-group-item">
+                <b>จำนวนในคลัง</b> <a class="float-right"></a>
+              </li>
+              <li class="list-group-item">
+                <b>ราคา</b> <a class="float-right">{{product.price}}</a>
+              </li>
+            </ul>
+            <button type="button"  (click)="onSelect(product)" class="btn btn-primary btn-block"><i class="fa fa-shopping-cart"></i><b>
+                เพิ่มตะกร้า</b></button>
+                <!-- <button type="button" class="btn btn-success toastrDefaultSuccess">
+                  Launch Success Toast
+                </button> -->
           </div>
+          <!-- /.box-body -->
         </div>
+      </div>
+
+
   
+
     
+
 
     </div>
   </div>
 
-  <button type="button" class="btn btn-success toastrDefaultSuccess">
-    Launch Success Toast
-  </button>
+
   
   <app-pagination-shop></app-pagination-shop>
 

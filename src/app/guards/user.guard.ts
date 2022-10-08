@@ -17,7 +17,7 @@ export class UserGuard implements CanActivate {
     if(this.rest.isLoggedIn()) {
       return true;
     }else {
-      this.router.navigateByUrl('/loginv1');
+      this.router.navigateByUrl('/login');
       return false;
   }
 }
