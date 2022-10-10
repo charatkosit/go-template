@@ -10,6 +10,8 @@ import { SearchShopComponent } from './components/shop/components/search-shop/se
 import { ProductsShopComponent } from './components/shop/components/products-shop/products-shop.component';
 import { CarouselShopComponent } from './components/shop/components/carousel-shop/carousel-shop.component';
 import { PaginationShopComponent } from './components/shop/components/pagination-shop/pagination-shop.component';
+import { ShareService } from 'src/app/services/share.service';
+
 
 
 @NgModule({
@@ -22,17 +24,20 @@ import { PaginationShopComponent } from './components/shop/components/pagination
     SearchShopComponent,
     ProductsShopComponent,
     CarouselShopComponent,
-    PaginationShopComponent
+    PaginationShopComponent,
+  
   ],
   imports: [
     CommonModule,
     FormsModule,
     ShoppingRoutingModule
   ],
+  providers: [ShareService],
   exports: [
     ShopComponent,
     ShoppingCartComponent,
-    ShoppingPaymentComponent
+    ShoppingPaymentComponent,
+    
   ]
 })
 export class ShoppingModule { }

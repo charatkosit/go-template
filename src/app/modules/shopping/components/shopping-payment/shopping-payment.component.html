@@ -5,12 +5,12 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Invoice</h1>
+            <h1>เช็คเอาท์</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Invoice</li>
+              <li class="breadcrumb-item active">เช็คเอาท์</li>
             </ol>
           </div>
         </div>
@@ -21,11 +21,141 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
+
             <div class="callout callout-info">
-              <h5><i class="fas fa-info"></i> Note:</h5>
-              This page has been enhanced for printing. Click the print button at the bottom of the invoice to test.
+              <h5 (click)="onEditAddress()"><i class="fas fa-map-marker-alt icon-hover"></i> จัดส่งสินค้า: </h5>
+              ชรัตน์ โฆษิตวณิชย์ อู่บางกรวย
+              <span *ngIf="this.enableEditAddress" (click)="onAddAddress()" class="float-right icon-hover"><i
+                  class="fas fa-plus"></i><a>
+                  ที่อยู่จัดส่ง</a> </span>
+
+
+
+              <div *ngIf="this.enableAddAddress" class="col-md-6">
+                <!-- general form elements -->
+                <div class="card card-primary">
+                  <div class="card-header">
+                    <h3 class="card-title">ที่อยู่ 1</h3>
+                  </div>
+                  <!-- /.card-header -->
+                  <!-- form start -->
+                  <form>
+                    <div class="card-body">
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="รหัสไปรษณีย์">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ที่อยู่ บ้านเลขที่ ซอย หมู่ ถนน แขวง ตำบล">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="เลขที่่อาคาร / ชั้น">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ชื่อ-นามสกุล">
+                      </div>
+                      <div class="form-group">
+                        <input type="text" class="form-control" id="exampleInputPassword1" placeholder="เบอร์โทรศัพท์">
+                      </div>
+
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                        <label class="form-check-label" for="exampleCheck1">ที่อยู่จัดส่ง หลัก</label>
+                      </div>
+                    </div>
+                    <!-- /.card-body -->
+
+                    <div class="card-footer">
+                      <button  (click)="onAddAddress()" type="submit" class="btn btn-primary">Submit</button>
+                    </div>
+                  </form>
+                </div>
+                <!-- /.card -->
+              </div>
             </div>
 
+            <div class="callout callout-info">
+              <h5><i class="fas fa-envelope icon-hover" (click)="onEditInvoice()"></i> ใบกำกับภาษี: </h5>
+              ชรัตน์ โฆษิตวณิชย์ อู่บางกรวย
+              <span *ngIf="this.enableEditInvoice" class="float-right icon-hover"><i
+                  class="fas fa-edit icon-hover"></i><a> แก้ไข</a> </span>
+
+
+            
+                  <div *ngIf="false" class="col-md-6">
+                    <!-- general form elements -->
+                    <div class="card card-primary">
+                      <div class="card-header">
+                        <h3 class="card-title"><span><i
+                          class="fas fa-edit icon-hover"></i><a> แก้ไข ใบกำกับภาษี</a></span></h3>
+                      </div>
+                      <!-- /.card-header -->
+                      <!-- form start -->
+                      <form>
+                        <div class="card-body">
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="รหัสไปรษณีย์">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ที่อยู่ บ้านเลขที่ ซอย หมู่ ถนน แขวง ตำบล">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="เลขที่่อาคาร / ชั้น">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="ชื่อ-นามสกุล">
+                          </div>
+                          <div class="form-group">
+                            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="เบอร์โทรศัพท์">
+                          </div>
+    
+                          <div class="form-check">
+                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                            <label class="form-check-label" for="exampleCheck1">ที่อยู่จัดส่ง หลัก</label>
+                          </div>
+                        </div>
+                        <!-- /.card-body -->
+    
+                        <div class="card-footer">
+                          <button  (click)="onEditInvoice()" type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                      </form>
+                    </div>
+                    <!-- /.card -->
+                  </div>
+
+
+            </div>
+
+            <div class="callout callout-info">
+              <h5 (click)="onSelectDelivery()"><i class="fas fa-truck icon-hover"></i> ขนส่ง: </h5>
+              <div *ngIf="this.showed" class="col-sm-6">
+                <!-- radio -->
+                <div class="form-group clearfix">
+                  <div class="icheck-primary">
+                    <input type="radio" id="radioPrimary1" name="r1" checked>
+                    <label for="radioPrimary1">
+                      <!-- <img src="../../../../../assets/images/thailandpost.jpg" style="height:30px; width:70px;"> -->
+
+                      ไปรษณีย์ไทย แบบธรรมดา
+                    </label>
+                  </div>
+                  <div class="icheck-primary">
+                    <input type="radio" id="radioPrimary2" name="r1">
+                    <label for="radioPrimary2">
+                      <!-- <img src="../../../../../assets/images/flash.png" style="height:30px; width:50px;"> -->
+                      Flash Express
+                    </label>
+                  </div>
+                  <div class="icheck-primary">
+                    <input type="radio" id="radioPrimary3" name="r1">
+                    <label for="radioPrimary3">
+                      Kerry
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
 
             <!-- Main content -->
             <div class="invoice p-3 mb-3">
@@ -79,112 +209,112 @@
                 <div class="col-12 table-responsive">
                   <table class="table table-striped">
                     <thead>
-                    <tr>
-                      <th>Qty</th>
-                      <th>Product</th>
-                      <th>Serial #</th>
-                      <th>Description</th>
-                      <th>Subtotal</th>
-                      <th>Action</th>
-                    </tr>
+                      <tr>
+                        <th>Qty</th>
+                        <th>Product</th>
+                        <th>Serial #</th>
+                        <th>Description</th>
+                        <th>Subtotal</th>
+                        <th>Action</th>
+                      </tr>
                     </thead>
                     <tbody>
-                    <tr>
-                      <td>1</td>
-                      <td>Call of Duty</td>
-                      <td>455-981-221</td>
-                      <td>El snort testosterone trophy driving gloves handsome</td>
-                      <td>$64.50</td>
-                      <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
-                          </i>
-                          View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-pencil-alt">
-                          </i>
-                          Edit
-                        </a>
-                        <a class="btn btn-danger btn-sm toastrDefaultError">
-                          <i class="fas fa-trash">
-                          </i>
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>Need for Speed IV</td>
-                      <td>247-925-726</td>
-                      <td>Wes Anderson umami biodiesel</td>
-                      <td>$50.00</td>
-                      <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
-                          </i>
-                          View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-pencil-alt">
-                          </i>
-                          Edit
-                        </a>
-                        <a class="btn btn-danger btn-sm toastrDefaultError">
-                          <i class="fas fa-trash">
-                          </i>
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>Monsters DVD</td>
-                      <td>735-845-642</td>
-                      <td>Terry Richardson helvetica tousled street art master</td>
-                      <td>$10.70</td>
-                      <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
-                          </i>
-                          View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-pencil-alt">
-                          </i>
-                          Edit
-                        </a>
-                        <a class="btn btn-danger btn-sm toastrDefaultError">
-                          <i class="fas fa-trash">
-                          </i>
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td>1</td>
-                      <td>Grown Ups Blue Ray</td>
-                      <td>422-568-642</td>
-                      <td>Tousled lomo letterpress</td>
-                      <td>$25.99</td>
-                      <td class="project-actions text-right">
-                        <a class="btn btn-primary btn-sm" href="#">
-                          <i class="fas fa-folder">
-                          </i>
-                          View
-                        </a>
-                        <a class="btn btn-info btn-sm" href="#">
-                          <i class="fas fa-pencil-alt">
-                          </i>
-                          Edit
-                        </a>
-                        <a class="btn btn-danger btn-sm toastrDefaultError">
-                          <i class="fas fa-trash">
-                          </i>
-                          Delete
-                        </a>
-                      </td>
-                    </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Call of Duty</td>
+                        <td>455-981-221</td>
+                        <td>El snort testosterone trophy driving gloves handsome</td>
+                        <td>$64.50</td>
+                        <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="#">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm toastrDefaultError">
+                            <i class="fas fa-trash">
+                            </i>
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Need for Speed IV</td>
+                        <td>247-925-726</td>
+                        <td>Wes Anderson umami biodiesel</td>
+                        <td>$50.00</td>
+                        <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="#">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm toastrDefaultError">
+                            <i class="fas fa-trash">
+                            </i>
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Monsters DVD</td>
+                        <td>735-845-642</td>
+                        <td>Terry Richardson helvetica tousled street art master</td>
+                        <td>$10.70</td>
+                        <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="#">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm toastrDefaultError">
+                            <i class="fas fa-trash">
+                            </i>
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>1</td>
+                        <td>Grown Ups Blue Ray</td>
+                        <td>422-568-642</td>
+                        <td>Tousled lomo letterpress</td>
+                        <td>$25.99</td>
+                        <td class="project-actions text-right">
+                          <a class="btn btn-primary btn-sm" href="#">
+                            <i class="fas fa-folder">
+                            </i>
+                            View
+                          </a>
+                          <a class="btn btn-info btn-sm" href="#">
+                            <i class="fas fa-pencil-alt">
+                            </i>
+                            Edit
+                          </a>
+                          <a class="btn btn-danger btn-sm toastrDefaultError">
+                            <i class="fas fa-trash">
+                            </i>
+                            Delete
+                          </a>
+                        </td>
+                      </tr>
                     </tbody>
                   </table>
                 </div>
@@ -239,7 +369,8 @@
               <!-- this row will not appear when printing -->
               <div class="row no-print">
                 <div class="col-12">
-                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i class="fas fa-print"></i> Print</a>
+                  <a href="invoice-print.html" rel="noopener" target="_blank" class="btn btn-default"><i
+                      class="fas fa-print"></i> Print</a>
                   <button type="button" class="btn btn-success float-right"><i class="far fa-credit-card"></i> Submit
                     Payment
                   </button>

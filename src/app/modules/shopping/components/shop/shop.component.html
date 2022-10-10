@@ -397,8 +397,18 @@
     </div>
   </div>
 
+  <div>
+    <button type="button" class="btn btn-success toastrDefaultSuccess">
+      Launch Success Toast
+    </button>
+  </div>
 
   
+  
+
+
+  
+
   <!-- box -->
   <div class="menu-customer col-md-10 offset-md-1">
     <div class="row">
@@ -418,7 +428,7 @@
                 <b>ราคา</b> <a class="float-right">{{product.price}}</a>
               </li>
             </ul>
-            <button type="button"  (click)="onSelect(product)" class="btn btn-primary btn-block"><i class="fa fa-shopping-cart"></i><b>
+            <button type="button"  (click)="onSelect(product)" class="btn btn-primary btn-block toastrDefaultSuccess"><i class="fas fa-cart-plus"></i><b>
                 เพิ่มตะกร้า</b></button>
                 <!-- <button type="button" class="btn btn-success toastrDefaultSuccess">
                   Launch Success Toast

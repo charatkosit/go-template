@@ -1,7 +1,7 @@
 <li class="nav-item" routerLinkActive="active">
     <a  routerLink="/shoppingcart" class="nav-link"   role="button">
       <i class="fa fa-shopping-cart"></i>
-      <span *ngIf="qty > 0" class="badge badge-danger navbar-badge">{{qty}}</span>
+      <span *ngIf="this.share.count > 0" class="badge badge-danger navbar-badge">{{this.share.count}}</span>
     </a>
   </li>
   

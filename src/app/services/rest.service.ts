@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, TemplateRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 import { Observable } from 'rxjs/internal/Observable';
@@ -8,6 +8,9 @@ import { Router } from '@angular/router';
   providedIn: 'root'
 })
 export class RestService {
+
+  toasts: any[] = [];
+
   private headers = new HttpHeaders({'Content-Type': 'application/json'});  
   private hostUrl = environment.backendUrl;  //กำหนด url server api ไว้ที่ environment
   //https://fakestoreapi.com/products/category/women's clothing
@@ -47,6 +50,11 @@ login(usernamePassword:string){
 register(usernamePassword:string){
   return this.http.post<any>(this.registerUrl, usernamePassword, {headers: this.headers})
 }
+
+
+
+
+
 
 
 }

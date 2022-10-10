@@ -39,6 +39,7 @@ import { ShoppingMenuComponent } from './components/sidemenu/components/shopping
 import { SearchMenuComponent } from './components/sidemenu/components/search-menu/search-menu.component';
 import { ProfileMenuComponent } from './components/sidemenu/components/profile-menu/profile-menu.component';
 import { SettingsMenuComponent } from './components/sidemenu/components/settings-menu/settings-menu.component';
+import { ShareService } from './services/share.service';
 
 
 
@@ -86,7 +87,7 @@ import { SettingsMenuComponent } from './components/sidemenu/components/settings
 
     AppRoutingModule  //****AppRoutingModule ต้องอยู่ด้านล่างเสมอ  
   ],
-  providers: [AppService, RestService],
+  providers: [AppService, RestService,ShareService],
   bootstrap: [AppComponent],
   exports: [
   ]

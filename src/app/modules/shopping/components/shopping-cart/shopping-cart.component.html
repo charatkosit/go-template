@@ -23,23 +23,19 @@
     <div class="container-fluid">
 
       <div class="callout callout-info">
-        <div class="icheck-primary d-inline ml-2">
-          <input type="checkbox" id="checkboxPrimary1">
-          <label for="checkboxPrimary1">เลือกสินค้าทั้งหมด
-          </label>
-        </div>
-        
-        <button type="button" class="btn btn-danger float-right" style="margin-right: 5px;" disabled>
-          <i class="fas fa-trash-o"></i> Delete
-        </button>
-       
- 
+        <h5><i class="fas fa-envelope icon-hover" ></i> ใบกำกับภาษี: </h5>
+        ชรัตน์ โฆษิตวณิชย์ อู่บางกรวย
+        <span class="float-right icon-hover"><i
+            class="fas fa-edit icon-hover"></i><a> แก้ไข</a> </span>
       </div>
 
 
 
+
+
+
       <div class="card card-solid">
-  
+
         <div class="card-body">
           <div class="row">
             <div class="col-12">
@@ -52,30 +48,22 @@
                     <th class="text-center">จำนวน</th>
                     <th class="text-center">ราคาต่อหน่วย</th>
                     <th class="text-center">รวมราคา</th>
-                    <th class="text-center">Action</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr *ngFor="let item of cart">
-                    <td  class="text-center" scope="row">                   
-                     
-                        <input type="checkbox"  id={{item.id}}>
-                                             
-                </td>
-                    <td class="text-left">{{item.title}}</td>
-                    <td class="text-center">1</td>
-                    <td class="text-right">{{item.price}}</td>
-                    <td class="text-right">{{item.price}}</td>
-                    <td class="project-actions text-right">
-                      <a class="btn btn-primary btn-sm" href="#">
-                        <i class="fas fa-folder">
-                        </i>
-                        View
-                      </a>
+                    <td class="text-center" scope="row">
+
+                      <input type="checkbox" (click)="onEnableDelete()" name={{item.id}}>
 
                     </td>
+                    <td class="text-left"><img src="{{item.image}}"  style="height:30px; width:auto" alt="Product Image"> {{item.title}}</td>
+                    <td class="text-center"><input type="number" class="text-right" value="1" min="0" max="50" step="1" /></td>
+                    <td class="text-right">{{item.price}}</td>
+                    <td class="text-right">{{item.price}}</td>
+
                   </tr>
-                
+
                 </tbody>
                 <tfoot>
                   <tr>
@@ -84,7 +72,6 @@
                     <td></td>
                     <td>ราคารวม</td>
                     <td class="text-right">{{total}}</td>
-                    <td></td>
                   </tr>
                 </tfoot>
               </table>
