@@ -7,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ShoppingPaymentComponent implements OnInit {
 
-  showed:Boolean = false;
-  enableEditInvoice:Boolean = false;
-  enableEditAddress:Boolean = false;
-  enableAddAddress:Boolean = false;
+  editDelivery:Boolean = false;
+  editInvoice:Boolean = false;
+  editAddress:Boolean = false;
+  addAddress:Boolean = false;
+  paymentMethod:Boolean = false;
+  gfg:string = "";
+  pay:string = "";
 
   DeliveryCompany:string = 'ไปรษณีย์ไทย แบบธรรมดา';
   constructor() { }
@@ -21,21 +24,32 @@ export class ShoppingPaymentComponent implements OnInit {
   
   onAddAddress(){
     // toggle show
-    this.enableAddAddress = !this.enableAddAddress
+    this.addAddress = !this.addAddress
   }
 
   onEditAddress(){
     // toggle show
-    this.enableEditAddress =!this.enableEditAddress
-
+    this.editAddress =!this.editAddress
   }
   onEditInvoice(){
     // toggle show
-    this.enableEditInvoice = !this.enableEditInvoice
+    this.editInvoice = !this.editInvoice
 
   }
   onSelectDelivery(){
     // toggle show
-    this.showed = !this.showed
+    this.editDelivery = !this.editDelivery
+  }
+  onSelectPayment(){
+    // toggle show
+    this.paymentMethod = !this.paymentMethod;
+  }
+
+  setValue(value:string){
+    this.gfg = value;
+  }
+
+  setPaymentMethod(value:string){
+    this.pay = value;
   }
 }

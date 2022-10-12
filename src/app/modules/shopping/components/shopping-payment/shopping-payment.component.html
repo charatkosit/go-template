@@ -25,13 +25,13 @@
             <div class="callout callout-info">
               <h5 (click)="onEditAddress()"><i class="fas fa-map-marker-alt icon-hover"></i> จัดส่งสินค้า: </h5>
               ชรัตน์ โฆษิตวณิชย์ อู่บางกรวย
-              <span *ngIf="this.enableEditAddress" (click)="onAddAddress()" class="float-right icon-hover"><i
+              <span *ngIf="this.editAddress" (click)="onAddAddress()" class="float-right icon-hover"><i
                   class="fas fa-plus"></i><a>
                   ที่อยู่จัดส่ง</a> </span>
 
 
 
-              <div *ngIf="this.enableAddAddress" class="col-md-6">
+              <div *ngIf="this.addAddress" class="col-md-6">
                 <!-- general form elements -->
                 <div class="card card-primary">
                   <div class="card-header">
@@ -78,7 +78,7 @@
             <div class="callout callout-info">
               <h5><i class="fas fa-envelope icon-hover" (click)="onEditInvoice()"></i> ใบกำกับภาษี: </h5>
               ชรัตน์ โฆษิตวณิชย์ อู่บางกรวย
-              <span *ngIf="this.enableEditInvoice" class="float-right icon-hover"><i
+              <span *ngIf="this.editInvoice" class="float-right icon-hover"><i
                   class="fas fa-edit icon-hover"></i><a> แก้ไข</a> </span>
 
 
@@ -132,27 +132,28 @@
 
             <div class="callout callout-info">
               <h5 (click)="onSelectDelivery()"><i class="fas fa-truck icon-hover"></i> ขนส่ง: </h5>
-              <div *ngIf="this.showed" class="col-sm-6">
+              <p>{{gfg}}</p>
+              <div *ngIf="this.editDelivery" class="col-sm-6">
                 <!-- radio -->
-                <div class="form-group clearfix">
-                  <div class="icheck-primary">
-                    <input type="radio" id="radioPrimary1" name="r1" checked>
+                <div class="form-group clearfix" [(ngModel)]="gfg" #ctrl="ngModel">
+                  <div class="icheck-primary" (click)="setValue('ไปรษณีย์ไทย แบบธรรมดา')">
+                    <input  type="radio" id="radioPrimary1" name="r1" checked>
                     <label for="radioPrimary1">
                       <!-- <img src="../../../../../assets/images/thailandpost.jpg" style="height:30px; width:70px;"> -->
 
-                      ไปรษณีย์ไทย แบบธรรมดา
+                      ไปรษณียไทย แบบธรรมดา
                     </label>
                   </div>
-                  <div class="icheck-primary">
+                  <div class="icheck-primary" (click)="setValue('Flash Express')">
                     <input type="radio" id="radioPrimary2" name="r1">
                     <label for="radioPrimary2">
                       <!-- <img src="../../../../../assets/images/flash.png" style="height:30px; width:50px;"> -->
                       Flash Express
                     </label>
                   </div>
-                  <div class="icheck-primary">
+                  <div class="icheck-primary" (click)="setValue('Kerry')">
                     <input type="radio" id="radioPrimary3" name="r1">
-                    <label for="radioPrimary3">
+                    <label  for="radioPrimary3">
                       Kerry
                     </label>
                   </div>
@@ -161,6 +162,37 @@
 
             </div>
 
+            <div class="callout callout-info">
+              <h5 (click)="onSelectPayment()"><i class="fas fa-credit-card icon-hover"></i>   วิธีชำระเงิน: </h5>
+              <p>{{pay}}</p>
+              <div *ngIf="this.paymentMethod" class="col-sm-6">
+                <!-- radio -->
+                <div class="form-group clearfix" [(ngModel)]="pay" #ctrl="ngModel">
+                  <div class="icheck-primary"(click)="setPaymentMethod('โอนธนาคาร')">
+                    <input type="radio" id="radioPrimary1" name="r1" checked>
+                    <label for="radioPrimary1">
+                      <!-- <img src="../../../../../assets/images/thailandpost.jpg" style="height:30px; width:70px;"> -->
+
+                      โอนธนาคาร
+                    </label>
+                  </div>
+                  <div class="icheck-primary" (click)="setPaymentMethod('เงินสด')">
+                    <input type="radio" id="radioPrimary2" name="r1">
+                    <label for="radioPrimary2">
+                      <!-- <img src="../../../../../assets/images/flash.png" style="height:30px; width:50px;"> -->
+                      เงินสด
+                    </label>
+                  </div>
+                  <div class="icheck-primary" (click)="setPaymentMethod('เก็บเงินปลายทาง')">
+                    <input type="radio" id="radioPrimary3" name="r1">
+                    <label for="radioPrimary3">
+                      เก็บเงินปลายทาง
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+            </div>
             <!-- Main content -->
             <div class="invoice p-3 mb-3">
               <!-- title row -->
