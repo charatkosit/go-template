@@ -20,37 +20,22 @@ export class ShoppingPaymentComponent implements OnInit {
 
   
   onAddAddress(){
-    if(this.enableAddAddress == true) {
-      this.enableAddAddress = false;
-    } else {
-      this.enableAddAddress = true;
-    }
+    // toggle show
+    this.enableAddAddress = !this.enableAddAddress
   }
 
   onEditAddress(){
     // toggle show
-    if(this.enableEditAddress == true){
-      this.enableEditAddress = false;
-    }else{
-      this.enableEditAddress = true;
-    }
+    this.enableEditAddress =!this.enableEditAddress
+
   }
   onEditInvoice(){
     // toggle show
-    if(this.enableEditInvoice == true){
-      this.enableEditInvoice = false;
-    } else {
-      this.enableEditInvoice = true;
-    }
+    this.enableEditInvoice = !this.enableEditInvoice
+
   }
   onSelectDelivery(){
     // toggle show
-    if(this.showed == true){
-      this.showed = false;
-    } else{
-      this.showed = true;
-    }
-   
-
+    this.showed = !this.showed
   }
 }

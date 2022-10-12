@@ -3,6 +3,8 @@ import { HttpClient } from '@angular/common/http';
 import { Product } from 'src/app/interfaces/product';
 import { RestService } from 'src/app/services/rest.service';
 import { ShareService } from 'src/app/services/share.service';
+import Swal from 'sweetalert2';
+declare var $:any;
 
 @Component({
   selector: 'app-shop',
@@ -15,7 +17,8 @@ export class ShopComponent implements OnInit {
   constructor(private http: HttpClient, private rest: RestService, private share:ShareService) { }
 
   ngOnInit(): void {
-    this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing").subscribe(res => {
+
+   this.http.get<Product[]>("https://fakestoreapi.com/products/category/women's clothing").subscribe(res => {
       return this.productList = res;
     })
   }
@@ -34,12 +37,28 @@ export class ShopComponent implements OnInit {
     console.log("Selected Product Id: ", selectedItem.id); // You get the Id of the selected item here
     this.mycart.push(selectedItem.id);
     console.log("Data in Cart:",this.mycart);
-
     this.share.count++ ;
-
+    this.onAlert();
 }
 
 
-
+  onAlert() {
+    $(function() {
+      var Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 1600
+      });
+  
+      
+        Toast.fire({
+          icon: 'success',
+          title: 'เพิ่มสินค้า ลงในตระกร้า'
+        });
+     
+  
+    });
+  }
 
 }
