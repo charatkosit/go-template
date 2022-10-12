@@ -11,6 +11,7 @@ import { ProductsShopComponent } from './components/shop/components/products-sho
 import { CarouselShopComponent } from './components/shop/components/carousel-shop/carousel-shop.component';
 import { PaginationShopComponent } from './components/shop/components/pagination-shop/pagination-shop.component';
 import { ShareService } from 'src/app/services/share.service';
+import { ShopTableComponent } from './components/shop-table/shop-table.component';
 
 
 
@@ -25,6 +26,7 @@ import { ShareService } from 'src/app/services/share.service';
     ProductsShopComponent,
     CarouselShopComponent,
     PaginationShopComponent,
+    ShopTableComponent,
   
   ],
   imports: [
@@ -37,6 +39,7 @@ import { ShareService } from 'src/app/services/share.service';
     ShopComponent,
     ShoppingCartComponent,
     ShoppingPaymentComponent,
+    ShopTableComponent,
     
   ]
 })

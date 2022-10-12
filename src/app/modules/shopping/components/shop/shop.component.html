@@ -7,12 +7,24 @@
           <h1>Shopping Page</h1>
 
         </div>
+
+
+
+
         <div class="col-sm-6">
           <ol class="breadcrumb float-sm-right">
             <li class="breadcrumb-item"><a href="#">Home</a></li>
             <li class="breadcrumb-item active">shopping Page</li>
           </ol>
         </div>
+
+        <div class="nav-item" routerLinkActive="active">
+          <a  routerLink="/shoplist" class="nav-link"   role="button">
+            <i class="fa fa-list"></i>
+          </a>
+        </div>
+
+        
       </div>
     </div>
     <!-- /.container-fluid -->
@@ -77,11 +89,11 @@
                 <div class="icon">
                   <i class="ion ion-stats-bars"></i>
                 </div>
-                <a  class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+                <a class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
               </div>
             </div>
             <!-- ./col -->
-            <div class="col-lg-3 col-xs-6" >
+            <div class="col-lg-3 col-xs-6">
               <!-- small box -->
               <div class="small-box bg-info" (click)="onClickCategory('men\'s clothing')">
                 <div class="inner">
@@ -313,8 +325,8 @@
   </div>
 
 
-   <!-- search -->
-   <div class="menu-customer col-md-10 offset-md-1">
+  <!-- search -->
+  <div class="menu-customer col-md-10 offset-md-1">
     <div class="row">
       <div class="col-lg-4">
         <!-- select -->
@@ -398,17 +410,18 @@
   </div>
 
 
-  
+
 
   <!-- box -->
   <div class="menu-customer col-md-10 offset-md-1">
     <div class="row">
 
- 
-      <div  class="col-lg-3" *ngFor="let product of productList " >
-        <div class="card" >
+
+      <div class="col-lg-3" *ngFor="let product of productList ">
+        <div class="card">
           <div class="card-body">
-            <img class="img-thumbnail" style="height:300px; width:300px;" src={{product.image}} alt="User profile picture">
+            <img class="img-thumbnail" style="height:300px; width:300px;" src={{product.image}}
+              alt="User profile picture">
             <p class="text-muted text-center" style="height:100px">{{product.title}}</p>
             <ul class="list-group list-group-unbordered">
 
@@ -419,9 +432,10 @@
                 <b>ราคา</b> <a class="float-right">{{product.price}}</a>
               </li>
             </ul>
-            <button type="button"  (click)="onSelect(product)" class="btn btn-primary btn-block toastrDefaultSuccess"><i class="fas fa-cart-plus"></i><b>
+            <button type="button" (click)="onSelect(product)" class="btn btn-primary btn-block toastrDefaultSuccess"><i
+                class="fas fa-cart-plus"></i><b>
                 เพิ่มตะกร้า</b></button>
-                <!-- <button type="button" class="btn btn-success toastrDefaultSuccess">
+            <!-- <button type="button" class="btn btn-success toastrDefaultSuccess">
                   Launch Success Toast
                 </button> -->
           </div>
@@ -430,16 +444,16 @@
       </div>
 
 
-  
 
-    
+
+
 
 
     </div>
   </div>
 
 
-  
+
   <app-pagination-shop></app-pagination-shop>
 
 </div>

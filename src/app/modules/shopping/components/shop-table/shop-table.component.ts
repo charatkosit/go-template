@@ -1,17 +1,16 @@
 import { Component, OnInit } from '@angular/core';
-declare var $:any;
+declare var $: any;
 
 @Component({
-  selector: 'app-invoice-list',
-  templateUrl: './invoice-list.component.html',
-  styleUrls: ['./invoice-list.component.css']
+  selector: 'app-shop-table',
+  templateUrl: './shop-table.component.html',
+  styleUrls: ['./shop-table.component.css']
 })
-export class InvoiceListComponent implements OnInit {
+export class ShopTableComponent implements OnInit {
 
   constructor() { }
 
   ngOnInit(): void {
-
     $(function () {
       $("#example1").DataTable({
         "responsive": true, "lengthChange": false, "autoWidth": false,
@@ -27,7 +26,6 @@ export class InvoiceListComponent implements OnInit {
         "responsive": true,
       });
     });
-
   }
 
 }
