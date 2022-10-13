@@ -6,6 +6,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AuthModule } from './modules/auth/auth.module';
 import { AdminModule } from './modules/admin/admin.module';
 import { ShoppingModule } from './modules/shopping/shopping.module';
+import { SapModule } from './modules/sap/sap.module';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -27,19 +28,14 @@ import { BlankComponent } from './components/blank/blank.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { CartNewComponent } from './components/header/cart-new/cart-new.component';
 import { UserHeaderComponent } from './components/header/user-header/user-header.component';
-import { DeliveryModule } from './modules/delivery/delivery.module';
-import { StatementModule } from './modules/statement/statement.module';
-import { InvoiceModule } from './modules/invoice/invoice.module';
-import { CnModule } from './modules/cn/cn.module';
-import { AccountModule } from './modules/account/account.module';
-import { OrdersModule } from './modules/orders/orders.module';
-import { PaymentsModule } from './modules/payments/payments.module';
+
 import { SapMenuComponent } from './components/sidemenu/components/sap-menu/sap-menu.component';
 import { ShoppingMenuComponent } from './components/sidemenu/components/shopping-menu/shopping-menu.component';
 import { SearchMenuComponent } from './components/sidemenu/components/search-menu/search-menu.component';
 import { ProfileMenuComponent } from './components/sidemenu/components/profile-menu/profile-menu.component';
 import { SettingsMenuComponent } from './components/sidemenu/components/settings-menu/settings-menu.component';
 import { ShareService } from './services/share.service';
+
 
 
 
@@ -77,13 +73,8 @@ import { ShareService } from './services/share.service';
     AdminModule,
     AuthModule,
     ShoppingModule,
-    DeliveryModule,
-    StatementModule,
-    InvoiceModule,
-    CnModule,
-    OrdersModule,
-    PaymentsModule,
-    AccountModule,
+    SapModule,
+  
 
     AppRoutingModule  //****AppRoutingModule ต้องอยู่ด้านล่างเสมอ  
   ],
