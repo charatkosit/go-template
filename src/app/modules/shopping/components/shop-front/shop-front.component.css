@@ -1,0 +1,13 @@
+.content-wrapper{
+    background-color: beige;
+}
+
+.content-header{
+    background-color: blueviolet;
+}
+
+.box{
+    background-color: brown;
+    column-gap: 10px;
+    border:2px solid #e6d45a;
+}

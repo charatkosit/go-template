@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { UserGuard } from 'src/app/guards/user.guard';
+import { ShopFrontComponent } from './components/shop-front/shop-front.component';
 import { ShopTableComponent } from './components/shop-table/shop-table.component';
 ;
 import { ShopComponent } from './components/shop/shop.component';
@@ -11,6 +12,7 @@ const shoppingRoutes: Routes = [
   {
     path: '', children: [
       { path: "shop", component: ShopComponent },
+      { path: "shopfront", component: ShopFrontComponent },
       { path: "shoplist", component: ShopTableComponent },
       { path: "shoppingcart", component: ShoppingCartComponent },
       { path: "payment", component: ShoppingPaymentComponent }

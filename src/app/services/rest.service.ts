@@ -1,7 +1,8 @@
 import { Injectable, TemplateRef } from '@angular/core';
 import { environment } from 'src/environments/environment';
+// import { environment } from '../../environments/environment';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
-import { Observable } from 'rxjs/internal/Observable';
+// import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
 
 @Injectable({
@@ -13,6 +14,7 @@ export class RestService {
 
   private headers = new HttpHeaders({'Content-Type': 'application/json'});  
   private hostUrl = environment.backendUrl;  //กำหนด url server api ไว้ที่ environment
+
   //https://fakestoreapi.com/products/category/women's clothing
   
   private authenApiUrl = `${this.hostUrl}api/v2/authen`;
@@ -21,6 +23,7 @@ export class RestService {
   private registerUrl = `${this.authenApiUrl}/register`; 
 
   private productUrl = `${this.hostUrl}/products/category`;  
+ 
 
   constructor(private router:Router, private http:HttpClient) { }
 

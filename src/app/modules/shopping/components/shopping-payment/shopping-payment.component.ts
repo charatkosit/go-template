@@ -12,6 +12,7 @@ export class ShoppingPaymentComponent implements OnInit {
   editAddress:Boolean = false;
   addAddress:Boolean = false;
   paymentMethod:Boolean = false;
+  formEditInvoice:boolean=false;
   gfg:string = "";
   pay:string = "";
 
@@ -34,6 +35,11 @@ export class ShoppingPaymentComponent implements OnInit {
   onEditInvoice(){
     // toggle show
     this.editInvoice = !this.editInvoice
+
+  }
+  showFormEditInvoice(){
+    // toggle show
+    this.formEditInvoice = !this.formEditInvoice
 
   }
   onSelectDelivery(){
