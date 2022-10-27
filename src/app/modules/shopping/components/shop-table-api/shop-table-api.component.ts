@@ -1,24 +1,23 @@
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { GoDatum } from 'src/app/interfaces/goDatum';
 import { GoPart } from 'src/app/interfaces/goPart';
+import { GoDatum } from 'src/app/interfaces/goDatum';
 import { RestService } from 'src/app/services/rest.service';
 import { ShareService } from 'src/app/services/share.service';
 import Swal from 'sweetalert2';
 declare var $: any;
 
 @Component({
-  selector: 'app-shop-table',
-  templateUrl: './shop-table.component.html',
-  styleUrls: ['./shop-table.component.css']
+  selector: 'app-shop-table-api',
+  templateUrl: './shop-table-api.component.html',
+  styleUrls: ['./shop-table-api.component.css']
 })
-export class ShopTableComponent implements OnInit {
+export class ShopTableApiComponent implements OnInit {
 
   goPart: GoPart[] = [];
-  goDatum: GoDatum[] = [];
-  partList: GoDatum[] = [];
+  goDatum: GoDatum[]=[];
+  partList: GoDatum[]=[];
   mycart:number[] =[];
-
   txt = `{
     "errorCode": "0",
     "resultFound": "50",
@@ -425,6 +424,7 @@ export class ShopTableComponent implements OnInit {
         }
     ]
 }`;
+  
 
 
   constructor(private http: HttpClient, private rest: RestService, private share:ShareService) { }
@@ -432,12 +432,12 @@ export class ShopTableComponent implements OnInit {
   ngOnInit(): void {
 
     const obj = JSON.parse(this.txt);
+
     console.log(obj);
     this.partList = obj.data;
     console.log(this.partList);
-
-
-
+ 
+    
 
     $(function () {
       $("#example1").DataTable({
@@ -456,7 +456,26 @@ export class ShopTableComponent implements OnInit {
     });
   }
 
+  onGetGoApi() {
+    let url = "http://192.168.20.17:8880/apigoplus/EnqPartlist/";
 
+    this.http.post<GoPart[]>(url, {
+      "token":"z@hz3sNY#0ohB9SspeE9@fLDQ%r65x$k8LxL28VH72FfvRWgCn",
+      "data":{
+          "partsno":"",
+          "partsname":"ไส้กรองน้ำมันเครื่อง",
+          "brand":"ISUZU",
+          "model":""
+      }
+  
+  }
+   ).subscribe(res => {
+      console.log(url);
+      return this.goPart = res;
+    })
+  }
+
+  
   onSelect(selectedItem: any) {
     console.log("Selected Product Id: ", selectedItem.id); // You get the Id of the selected item here
     this.mycart.push(selectedItem.id);
@@ -483,5 +502,6 @@ onAlert() {
 
   });
 }
+
 
 }

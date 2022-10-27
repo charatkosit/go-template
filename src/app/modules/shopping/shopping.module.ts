@@ -13,6 +13,7 @@ import { PaginationShopComponent } from './components/shop/components/pagination
 import { ShareService } from 'src/app/services/share.service';
 import { ShopTableComponent } from './components/shop-table/shop-table.component';
 import { ShopFrontComponent } from './components/shop-front/shop-front.component';
+import { ShopTableApiComponent } from './components/shop-table-api/shop-table-api.component';
 
 
 
@@ -29,6 +30,7 @@ import { ShopFrontComponent } from './components/shop-front/shop-front.component
     PaginationShopComponent,
     ShopTableComponent,
     ShopFrontComponent,
+    ShopTableApiComponent,
   
   ],
   imports: [
@@ -43,6 +45,7 @@ import { ShopFrontComponent } from './components/shop-front/shop-front.component
     ShoppingPaymentComponent,
     ShopTableComponent,
     ShopFrontComponent,
+    ShopTableApiComponent,
     
   ]
 })
