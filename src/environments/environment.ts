@@ -9,7 +9,7 @@ export const environment = {
   sapApiToken:"z@hz3sNY#0ohB9SspeE9@fLDQ%r65x$k8LxL28VH72FfvRWgCn",
   loginResult: "loginResult",
   baseUrl: "",
-  project: "Build Dev:v0.1.3 on 27/10/22",
+  project: "Build Dev-SIT:v0.1. on 31/10/22",
 };
 /*
  * For easier debugging in development mode, you can import the following file
