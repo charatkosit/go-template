@@ -10,9 +10,11 @@ import { environment } from 'src/environments/environment';
 })
 export class HeaderComponent implements OnInit {
 
+   project:string ='';
   constructor(private router:Router, public rest:RestService) { }
 
   ngOnInit(): void {
+     this.project = environment.project;
   }
 
  

@@ -14,6 +14,7 @@ import { ShareService } from 'src/app/services/share.service';
 import { ShopTableComponent } from './components/shop-table/shop-table.component';
 import { ShopFrontComponent } from './components/shop-front/shop-front.component';
 import { ShopTableApiComponent } from './components/shop-table-api/shop-table-api.component';
+import { ShoppingCartV1Component } from './components/shopping-cart-v1/shopping-cart-v1.component';
 
 
 
@@ -31,6 +32,7 @@ import { ShopTableApiComponent } from './components/shop-table-api/shop-table-ap
     ShopTableComponent,
     ShopFrontComponent,
     ShopTableApiComponent,
+    ShoppingCartV1Component,
   
   ],
   imports: [
@@ -46,6 +48,7 @@ import { ShopTableApiComponent } from './components/shop-table-api/shop-table-ap
     ShopTableComponent,
     ShopFrontComponent,
     ShopTableApiComponent,
+    ShoppingCartV1Component,
     
   ]
 })

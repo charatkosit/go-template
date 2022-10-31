@@ -1,25 +1,4 @@
-import { HttpClient } from '@angular/common/http';
-import { Component, OnInit } from '@angular/core';
-import { GoDatum } from 'src/app/interfaces/goDatum';
-import { GoPart } from 'src/app/interfaces/goPart';
-import { RestService } from 'src/app/services/rest.service';
-import { ShareService } from 'src/app/services/share.service';
-import Swal from 'sweetalert2';
-declare var $: any;
-
-@Component({
-  selector: 'app-shop-table',
-  templateUrl: './shop-table.component.html',
-  styleUrls: ['./shop-table.component.css']
-})
-export class ShopTableComponent implements OnInit {
-
-  goPart: GoPart[] = [];
-  goDatum: GoDatum[] = [];
-  partList: GoDatum[] = [];
-  mycart:string[] =[];
-
-  txt = `{
+export const goPlusApi = {
     "errorCode": "0",
     "resultFound": "50",
     "data": [
@@ -424,64 +403,4 @@ export class ShopTableComponent implements OnInit {
             "Price": "940"
         }
     ]
-}`;
-
-
-  constructor(private http: HttpClient, private rest: RestService, private share:ShareService) { }
-
-  ngOnInit(): void {
-
-    const obj = JSON.parse(this.txt);
-    console.log(obj);
-    this.partList = obj.data;
-    console.log(this.partList);
-
-
-
-
-    $(function () {
-      $("#example1").DataTable({
-        "responsive": true, "lengthChange": false, "autoWidth": false,
-        // "buttons": ["copy", "csv", "excel", "pdf", "print", "colvis"]
-      }).buttons().container().appendTo('#example1_wrapper .col-md:eq(0)');
-      $('#example2').DataTable({
-        "paging": true,
-        "lengthChange": false,
-        "searching": false,
-        "ordering": true,
-        "info": true,
-        "autoWidth": false,
-        "responsive": false,
-      });
-    });
-  }
-
-
-  onSelect(selectedItem: any) {
-    console.log("Selected Product Id: ", selectedItem); // ส่ง  BarcodeNew มา
-    this.mycart.push(selectedItem);
-    console.log("Data in Cart:",this.mycart);
-    this.share.count++ ;
-    this.onAlert();
-}
-
-onAlert() {
-  $(function() {
-    var Toast = Swal.mixin({
-      toast: true,
-      position: 'top-end',
-      showConfirmButton: false,
-      timer: 1600
-    });
-
-    
-      Toast.fire({
-        icon: 'success',
-        title: 'เพิ่มสินค้า ลงในตระกร้า'
-      });
-   
-
-  });
-}
-
-}
+};

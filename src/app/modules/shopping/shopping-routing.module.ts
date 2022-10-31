@@ -6,6 +6,7 @@ import { ShopTableApiComponent } from './components/shop-table-api/shop-table-ap
 import { ShopTableComponent } from './components/shop-table/shop-table.component';
 ;
 import { ShopComponent } from './components/shop/shop.component';
+import { ShoppingCartV1Component } from './components/shopping-cart-v1/shopping-cart-v1.component';
 import { ShoppingCartComponent } from './components/shopping-cart/shopping-cart.component';
 import { ShoppingPaymentComponent } from './components/shopping-payment/shopping-payment.component';
 
@@ -15,7 +16,7 @@ const shoppingRoutes: Routes = [
       { path: "shop", component: ShopComponent },
       { path: "shopfront", component: ShopFrontComponent },
       { path: "shoplist", component: ShopTableComponent },
-      { path: "shoppingcart", component: ShoppingCartComponent },
+      { path: "shoppingcart", component: ShoppingCartV1Component },
       { path: "shoptableapi", component: ShopTableApiComponent },
       { path: "payment", component: ShoppingPaymentComponent }
     ], canActivate: [UserGuard]
