@@ -1,57 +1,60 @@
-<div class="container d-flex align-items-center" style="height:82vh;">
-  <div class="login-box  offset-md-4">
-    <div class="login-logo">
-      <b>GP </b>Login
-    </div>
-    <!-- /.login-logo -->
-    <div class="card">
-      <div class="card-body login-card-body">
-        <p class="login-box-msg">Sign in to start your session</p>
-
-        <form #loginForm="ngForm" (submit)="onClickSubmit(loginForm.value)">
-          <div class="input-group mb-3">
-            <input ngModel name="username" type="email" class="form-control" placeholder="Email">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
+<div class="row justify-content-center align-items-center  min-vh-100 ">
+  <!--<div class="container-items-center row justify-content-center bg-info align-items-center" style="height:82vh;">-->
+      <div class="login-box ">
+        <div class="login-logo">
+          <a href="#"><b>GO</b>PLUS++</a>
+        </div>
+        <!-- /.login-logo -->
+        <div class="card">
+          <div class="card-body login-card-body">
+            <p class="login-box-msg"><b>Login</b> to start your session</p>
+      
+            <form action="../../index3.html" method="post">
+              <div class="input-group mb-3">
+                <input type="email" class="form-control" placeholder="Email">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                  </div>
+                </div>
               </div>
-            </div>
-          </div>
-          <div class="input-group mb-3">
-            <input ngModel name="password" type="password" class="form-control" placeholder="Password">
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
+              <div class="input-group mb-3">
+                <input type="password" class="form-control" placeholder="Password">
+                <div class="input-group-append">
+                  <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                  </div>
+                </div>
               </div>
-            </div>
+              <div class="row">
+                <div class="col-8">
+                  <div class="icheck-primary">
+                    <input type="checkbox" id="remember">
+                    <label for="remember">
+                      Remember Me
+                    </label>
+                  </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-4">
+                  <button type="submit" (click)="onClickSubmit('a')" class="btn btn-primary btn-block">Sign In</button>
+                </div>
+                <!-- /.col -->
+              </div>
+            </form>
+            <!-- /.social-auth-links -->
+      
+            <p class="mb-1" routerLinkActive="active">
+              <a routerLink="/#">I forgot my password</a>
+            </p>
+            <p class="mb-0" routerLinkActive="active">
+              <a routerLink="/#" class="text-center">Register a new membership</a>
+            </p>
           </div>
-
-          <!-- Error Message -->
-          <div *ngIf="isError" class="row" style="text-align: center; color :red;margin-bottom: 8px;">
-            Error! Invalid account
-          </div>
-
-          <div class="mb-3">
-            <button class="btn btn-block btn-primary" type="submit">Login</button>
-          </div>
-
-
-
-        </form>
-        <p class="mb-0" routerLinkActive="active">
-          <a routerLink="/register" class="text-center">Register a new membership</a>
-        </p>
-        <p class="mb-1" routerLinkActive="active">
-          <a routerLink="/forgot">I forgot my password</a>
-        </p>
-
-        <p class="mb-1" routerLinkActive="active">
-          <a (click)="onClickAdmin()" routerLink="/blank">Login as Administrator</a>
-        </p>
+          <!-- /.login-card-body -->
+        </div>
       </div>
-      <!-- /.login-card-body -->
+    
     </div>
-  </div>
-</div>
-
-<!-- /.login-box -->
+  
+  
