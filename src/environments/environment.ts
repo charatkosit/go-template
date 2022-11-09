@@ -10,6 +10,7 @@ export const environment = {
   loginResult: "loginResult",
   baseUrl: "",
   project: "Build Dev:v0.1.3a on 27/10/22",
+  release: "0.0.5",
 };
 /*
  * For easier debugging in development mode, you can import the following file
