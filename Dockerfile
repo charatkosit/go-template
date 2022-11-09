@@ -15,7 +15,7 @@ RUN npm cache clean --force
 # สั่งรัน  npm run build เพื่อ build project  angular
 COPY . .
 RUN npm install
-RUN npm run build:${config}
+RUN npm run build
 
 
 ### STAGE 2:RUN ###
