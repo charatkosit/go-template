@@ -6,10 +6,7 @@ WORKDIR /app
 # Copy files to virtual directory
 # COPY package.json package-lock.json ./
 # Run command in Virtual directory
-ARG config
-ARG version
-COPY / /app
-RUN sed -i "s|<VERSION>|\"${version}\"|"  ./src/environments/environment.${config}.ts
+
 
 
 RUN npm cache clean --force
