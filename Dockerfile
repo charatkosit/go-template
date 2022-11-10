@@ -2,6 +2,10 @@
 # สร้าง node  
 FROM node:latest AS builder
 # Create a Virtual directory inside the docker image
+
+# SET Timezone (Asia/Bangkok GTM+07:00)
+RUN ln -sf /usr/share/zoneinfo/Asia/Bangkok /etc/localtime
+
 WORKDIR /app
 # Copy files to virtual directory
 # COPY package.json package-lock.json ./
