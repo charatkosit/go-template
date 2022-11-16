@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   backendUrl: "http://localhost:8085/",
-  sapUrl: "http://192.168.20.17:8880/apigoplus/EnqPartlist/",
+  sapUrl: "http://goapi.ddns.net:3000/api/v1/",
   sapApiToken:"z@hz3sNY#0ohB9SspeE9@fLDQ%r65x$k8LxL28VH72FfvRWgCn",
   loginResult: "loginResult",
   baseUrl: "",
