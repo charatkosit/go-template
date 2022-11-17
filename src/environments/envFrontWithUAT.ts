@@ -16,6 +16,6 @@ sed -i -e "s|%sapUrl%|${sapUrl}|g" /var/lib/jenkins/workspace/go-front-uat/src/e
 sed -i -e "s|%sapApiToken%|${sapApiToken}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 sed -i -e "s|%stage%|${stage}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 sed -i -e "s|%timestamp%|${timestamp}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
-sed -i -e "s|%tagname%|${release}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
+sed -i -e "s|%release%|${release}|g" /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
 #debug
 cat /var/lib/jenkins/workspace/go-front-uat/src/environments/environment.prod.ts
