@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms'
 
 import { ShoppingRoutingModule } from './shopping-routing.module';
 import { ShopComponent } from './components/shop/shop.component';
@@ -15,6 +15,7 @@ import { ShopTableComponent } from './components/shop-table/shop-table.component
 import { ShopFrontComponent } from './components/shop-front/shop-front.component';
 import { ShopTableApiComponent } from './components/shop-table-api/shop-table-api.component';
 import { ShoppingCartV1Component } from './components/shopping-cart-v1/shopping-cart-v1.component';
+import { ShopArmV1Component } from './components/shop-arm-v1/shop-arm-v1.component';
 
 
 
@@ -33,11 +34,13 @@ import { ShoppingCartV1Component } from './components/shopping-cart-v1/shopping-
     ShopFrontComponent,
     ShopTableApiComponent,
     ShoppingCartV1Component,
+    ShopArmV1Component,
   
   ],
   imports: [
     CommonModule,
     FormsModule,
+    ReactiveFormsModule,
     ShoppingRoutingModule
   ],
   providers: [ShareService],
@@ -49,6 +52,7 @@ import { ShoppingCartV1Component } from './components/shopping-cart-v1/shopping-
     ShopFrontComponent,
     ShopTableApiComponent,
     ShoppingCartV1Component,
+    ShopArmV1Component,
     
   ]
 })

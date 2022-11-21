@@ -4,6 +4,7 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 // import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
+import { MyPart } from '../interfaces/myPart';
 
 @Injectable({
   providedIn: 'root'
@@ -15,6 +16,7 @@ export class RestService {
   private headers = new HttpHeaders({'Content-Type': 'application/json'});  
   private hostUrl = environment.backendUrl;  //กำหนด url server api ไว้ที่ environment
 
+
   //https://fakestoreapi.com/products/category/women's clothing
   
   private authenApiUrl = `${this.hostUrl}api/v2/authen`;
@@ -22,7 +24,9 @@ export class RestService {
   private loginUrl = `${this.authenApiUrl}/login`;
   private registerUrl = `${this.authenApiUrl}/register`; 
 
-  private productUrl = `${this.hostUrl}/products/category`;  
+  private productUrl = `${this.hostUrl}/products/category`;
+  
+  private  preurl = `${this.hostUrl}api/v1`;
  
 
   constructor(private router:Router, private http:HttpClient) { }
@@ -55,9 +59,19 @@ register(usernamePassword:string){
 }
 
 
+getPartlistApiLocal(): any {
+   return this.http.get<MyPart>(`${this.hostUrl}`);
+}
 
 
-
-
+getPartlistByKeyword(keyword : String) {
+  // keyword = ItemName=&ItemCode=&Brand=&Model=
+  console.log(keyword);
+  
+  const uri = `${this.preurl}/products/search?${keyword}`;
+  console.log(uri);
+  return this.http.get<any>(`${uri}`);    
+}
+  
 
 }

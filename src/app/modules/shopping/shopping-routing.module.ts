@@ -15,7 +15,7 @@ const shoppingRoutes: Routes = [
     path: '', children: [
       { path: "shop", component: ShopComponent },
       { path: "shopfront", component: ShopFrontComponent },
-      { path: "shoplist", component: ShopTableComponent },
+      { path: "shoplist", component: ShopTableApiComponent },
       { path: "shoppingcart", component: ShoppingCartV1Component },
       { path: "shoptableapi", component: ShopTableApiComponent },
       { path: "payment", component: ShoppingPaymentComponent }
