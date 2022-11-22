@@ -12,11 +12,13 @@ export class HeaderComponent implements OnInit {
 
    project:string ='';
    backUrl:string = '';
+   release:string = '';
   constructor(private router:Router, public rest:RestService) { }
 
   ngOnInit(): void {
      this.project = environment.project;
      this.backUrl = environment.backendUrl;
+     this.release = environment.release;
   }
 
  
