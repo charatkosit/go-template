@@ -15,6 +15,8 @@ export class RestService {
 
   private headers = new HttpHeaders({'Content-Type': 'application/json'});  
   private hostUrl = environment.backendUrl;  //กำหนด url server api ไว้ที่ environment
+  private sapUrl  = environment.sapUrl;
+  private sapToken = environment.sapApiToken;
 
 
   //https://fakestoreapi.com/products/category/women's clothing
@@ -64,7 +66,7 @@ getPartlistApiLocal(): any {
 }
 
 
-getPartlistByKeyword(keyword : String) {
+getPartlistByKeyword(keyword:String) {
   // keyword = ItemName=&ItemCode=&Brand=&Model=
   console.log(keyword);
   
@@ -73,5 +75,27 @@ getPartlistByKeyword(keyword : String) {
   return this.http.get<any>(`${uri}`);    
 }
   
+getSapBillToByKeyword(keyword:string){
+  const uri =`${this.sapUrl}apigoplus/GetBillTo/`
+  console.log(uri);
+  console.log(this.sapToken);
+  console.log(keyword);
+ }
+
+
+ getSapShipToByKeyword(keyword:string){
+  const uri =`${this.sapUrl}apigoplus/GetShipTo/`
+  console.log(uri);
+  console.log(this.sapToken);
+  console.log(keyword);
+ }
+
+ getSapTransportToByKeyword(keyword:string){
+  const uri =`${this.sapUrl}apigoplus/GetTransportTo/`
+  console.log(uri);
+  console.log(this.sapToken);
+  console.log(keyword);
+ }
+
 
 }

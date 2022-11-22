@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { RestService } from 'src/app/services/rest.service';
 
 @Component({
   selector: 'app-shopping-payment',
@@ -17,9 +18,11 @@ export class ShoppingPaymentComponent implements OnInit {
   pay:string = "";
 
   DeliveryCompany:string = 'ไปรษณีย์ไทย แบบธรรมดา';
-  constructor() { }
+  constructor(private rest:RestService) { }
 
   ngOnInit(): void {
+    this.onGetBillTo();
+    this.onGetShipTo();
   }
 
   
@@ -57,5 +60,13 @@ export class ShoppingPaymentComponent implements OnInit {
 
   setPaymentMethod(value:string){
     this.pay = value;
+  }
+
+  onGetBillTo(){
+    this.rest.getSapBillToByKeyword('test bill')
+  }
+
+  onGetShipTo(){
+    this.rest.getSapShipToByKeyword('test ship')
   }
 }
