@@ -5,6 +5,7 @@ import { HttpClient, HttpHeaders} from '@angular/common/http';
 // import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
 import { MyPart } from '../interfaces/myPart';
+import { Data_BillTo, Post_BillTo } from '../interfaces/post_BillTo';
 
 @Injectable({
   providedIn: 'root'
@@ -75,13 +76,14 @@ getPartlistByKeyword(keyword:String) {
   return this.http.get<any>(`${uri}`);    
 }
   
-getSapBillToByKeyword(keyword:string){
-  const uri =`${this.sapUrl}apigoplus/GetBillTo/`
-  console.log(uri);
-  console.log(this.sapToken);
-  console.log(keyword);
- }
+getSapBillToByKeyword(post_BillTo :Post_BillTo){
+   const uri =`${this.sapUrl}apigoplus/GetBillTo/`
+   console.log(`uri:  ${uri}`);
+   console.log(`post:  ${post_BillTo}`);
 
+return this.http.post<any>('uri',post_BillTo)
+   
+}
 
  getSapShipToByKeyword(keyword:string){
   const uri =`${this.sapUrl}apigoplus/GetShipTo/`

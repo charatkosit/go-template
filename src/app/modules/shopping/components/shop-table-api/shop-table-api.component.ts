@@ -75,26 +75,21 @@ export class ShopTableApiComponent implements OnInit {
 
 
 
-    onGetGoApi_local(): any {
-        this.rest.getPartlistApiLocal()
-            .subscribe((res: MyPart) => {
-                this.myData = res;
-                this.partlista = this.myData.data
-                console.log(this.partlista[0])
-            })
-        return this.partlista
-    }
 
     
     onSearchPartlist() {
-  
+      // รับค่าจาก template
        this.var1= this.itemnameForm.value;
        this.var2= this.numberForm.value;
        this.var3= this.brandForm.value;
        this.var4= this.modelForm.value;
         // keyword = ItemName=&ItemCode=&Brand=&Model=
+
+        //นำค่ามาต่อกัน แล้วเอาคำว่า null ออก
         this.keyword = `ItemName=${this.var1}&ItemCode=${this.var2}&Brand=${this.var3}&Model=${this.var4}`
         this.keyword = this.keyword.replace(/null/g, '');
+
+        //ยิง api get 
         this.rest.getPartlistByKeyword(this.keyword)
            .subscribe( (res:MyPart) => {
             this.myData = res;

@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { Data_BillTo, Post_BillTo } from 'src/app/interfaces/post_BillTo';
 import { RestService } from 'src/app/services/rest.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'app-shopping-payment',
@@ -62,9 +64,31 @@ export class ShoppingPaymentComponent implements OnInit {
     this.pay = value;
   }
 
-  onGetBillTo(){
-    this.rest.getSapBillToByKeyword('test bill')
+
+
+
+  async onGetBillTo(keyword:string = '10019590100' ){
+
+    let customer_code =  keyword; //'10019590100';
+    const token = environment.sapApiToken;
+ 
+ const data: Data_BillTo = { customer_code: customer_code };
+ console.log(data);
+ 
+ const post_BillTo: Post_BillTo = {
+   token: token,
+   data: data,
+ };
+ 
+
+ console.log(`sapUrl: ${token}`);
+ console.log(`customer_cod: ${customer_code}`);
+
+     await this.rest.getSapBillToByKeyword(post_BillTo)
   }
+
+
+
 
   onGetShipTo(){
     this.rest.getSapShipToByKeyword('test ship')
