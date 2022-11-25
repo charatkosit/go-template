@@ -1,6 +1,6 @@
 {
   "name": "go-template",
-  "version": "0.0.45",
+  "version": "0.0.47",
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
