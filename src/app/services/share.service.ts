@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { SumOrder } from '../interfaces/SumOrder';
 
 @Injectable({
   providedIn: 'root'
@@ -18,7 +19,11 @@ import { Injectable } from '@angular/core';
 // }
 
 export class ShareService {
+
+  
   count:number = 0;
+  grandTotal:number = 0;
+  sumCart:SumOrder[] =[]
 //   newCart:Cart[]=[{
 //     "User": "Charat",
 //     "Cart": [ {"producId": 15, "qty":1},

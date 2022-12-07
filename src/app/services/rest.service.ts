@@ -4,8 +4,9 @@ import { environment } from 'src/environments/environment';
 import { HttpClient, HttpHeaders} from '@angular/common/http';
 // import { Observable } from 'rxjs/internal/Observable';
 import { Router } from '@angular/router';
-import { MyPart } from '../interfaces/myPart';
+
 import { Data_BillTo, Post_BillTo } from '../interfaces/post_BillTo';
+import { ApiPartlist } from '../interfaces/apiPartlist';
 
 @Injectable({
   providedIn: 'root'
@@ -63,7 +64,7 @@ register(usernamePassword:string){
 
 
 getPartlistApiLocal(): any {
-   return this.http.get<MyPart>(`${this.hostUrl}`);
+   return this.http.get<ApiPartlist>(`${this.hostUrl}`);
 }
 
 
@@ -71,11 +72,21 @@ getPartlistByKeyword(keyword:String) {
   // keyword = ItemName=&ItemCode=&Brand=&Model=
   console.log(keyword);
   
-  const uri = `${this.preurl}/products/search?${keyword}`;
+  const uri = `${this.preurl}/products/pagination?${keyword}`;
   console.log(uri);
   return this.http.get<any>(`${uri}`);    
 }
   
+getPartlistByOne(ItemCode:String){
+  console.log(ItemCode);
+  const keyword:string = `ItemName=&ItemCode=${ItemCode}&Brand=&Model=`
+  console.log(keyword)
+  const uri = `${this.preurl}/products/search?${keyword}`;
+  console.log(uri);
+  return this.http.get<any>(`${uri}`);  
+
+}
+
 getSapBillToByKeyword(post_BillTo :Post_BillTo){
    const uri =`${this.sapUrl}apigoplus/GetBillTo/`
    console.log(`uri:  ${uri}`);

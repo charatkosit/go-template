@@ -38,14 +38,24 @@
             <div class="menu-customer">
               <div class="row">
 
-                <div class="col-lg-3">
-                  <!-- select -->
+                <!-- <div class="col-lg-3">
                   <div class="form-group">
                     <label for="brand-form">ยี่ห้อ (3ตัว)</label>
                     <input type="text" [formControl]="brandForm" class="form-control" id="brand-form"
                       placeholder="ค้นหา">
                   </div>
+                </div> -->
+                <div class="col-lg-3">
+                  <div class="form-group">
+                    <label>Select</label>
+                    <select class="form-control"[formControl]="brandForm" >
+              
+                      <option *ngFor="let x of mock_brand" [value]="x.brand">{{x.display}}</option>
+                     </select>
+                  </div>
                 </div>
+
+
                 <div class="col-lg-3">
                   <!-- select -->
                   <div class="form-group">
@@ -84,12 +94,17 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">DataTable with default features</h3>
+              <h3 class="card-title">แสดง {{this.no_start}} - {{this.no_end}} จาก {{this.totalFound}} ผลลัพธ์ </h3>
+              <!-- <span>                <div class="float-right">
+                  <button type="button" class="btn btn-default"><i class="fas fa-pencil-alt"></i> Draft</button>
+                  <button type="submit" class="btn btn-primary" ><i class="far fa-envelope"></i> Send</button>
+                </div></span> -->
             </div>
             <!-- /.card-header -->
             <div class="card-body">
 
               <table id="example1" class="table table-bordered table-striped">
+
                 <thead>
                   <tr>
                     <th>Brand</th>
@@ -97,19 +112,19 @@
                     <th>Barcode</th>
                     <th>BarcodeNew</th>
                     <th>Model</th>
-                    <th>Price</th>
+                    <th>RetailPrice</th>
                     <th>Action</th>
                   </tr>
                 </thead>
                 <tbody>
-                  <tr *ngFor="let part of partlista">
+                  <tr *ngFor="let part of partlist">
                     <td>{{part.Brand}}</td>
                     <td>{{part.ItemName}}</td>
                     <td>{{part.ItemCode}}</td>
                     <td>{{part.ItemCodeNew}}</td>
                     <td>{{part.Model}}</td>
                     <td>{{part.RetailPrice}}</td>
-                    <td><button type="button" (click)="onSelect(part)"
+                    <td><button type="button" (click)="onSelect(part.ItemCode, part.ItemName, part.RetailPrice)"
                         class="btn btn-outline-primary btn-block toastrDefaultSuccess"><i
                           class="fas fa-cart-plus"></i><b>
                           เพิ่มตะกร้า</b></button></td>
@@ -124,6 +139,7 @@
                     <th>BarcodeNew</th>
                     <th>Model</th>
                     <th>Price</th>
+                    <th></th>
                   </tr>
                 </tfoot> -->
               </table>

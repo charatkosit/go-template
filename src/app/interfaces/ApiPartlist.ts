@@ -1,11 +1,11 @@
-export interface MyPart {
+export interface ApiPartlist {
     code:        number;
     message:     string;
     resultFound: number;
-    data:        PartListA[];
+    data:        Partlist[];
 }
 
-export interface PartListA {
+export interface Partlist {
     id:          number;
     Brand:       string;
     ItemCode:    string;
